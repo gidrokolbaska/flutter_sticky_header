@@ -249,14 +249,14 @@ class RenderSliverStickyHeader extends RenderSliver with RenderSliverHelpers {
                   constraints.scrollOffset -
                   (overlapsContent ? _headerExtent! : 0.0))
           : -constraints.scrollOffset;
-
+      print('gabella: ${headerPosition}');
       _isPinned = sticky &&
           ((constraints.scrollOffset + constraints.overlap) > 0.0 ||
               constraints.remainingPaintExtent ==
                   constraints.viewportMainAxisExtent);
 
       final double headerScrollRatio =
-          ((headerPosition - 10 - constraints.overlap).abs() / _headerExtent!);
+          ((headerPosition - constraints.overlap).abs() / _headerExtent!);
       if (_isPinned && headerScrollRatio <= 1) {
         controller?.stickyHeaderScrollOffset =
             constraints.precedingScrollExtent;
