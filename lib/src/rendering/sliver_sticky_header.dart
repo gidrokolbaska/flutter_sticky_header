@@ -256,7 +256,7 @@ class RenderSliverStickyHeader extends RenderSliver with RenderSliverHelpers {
                   constraints.viewportMainAxisExtent);
 
       final double headerScrollRatio =
-          ((headerPosition - constraints.overlap).abs() / _headerExtent! + 30);
+          ((headerPosition - constraints.overlap).abs() / _headerExtent! - 30);
       if (_isPinned && headerScrollRatio <= 1) {
         controller?.stickyHeaderScrollOffset =
             constraints.precedingScrollExtent;
